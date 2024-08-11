@@ -3,6 +3,7 @@ document.getElementById('encryptButton').addEventListener('click', function() {
     const resultTextarea = document.getElementById('result');
     const image = document.getElementById('image_result'); 
     const noteText = document.querySelector('.result-description'); 
+    const copyButton = document.getElementById('button__copiar');
 
     if (inputText.trim() !== "" && /^[a-z\s]+$/.test(inputText)) {
         // Encriptar el texto
@@ -15,12 +16,18 @@ document.getElementById('encryptButton').addEventListener('click', function() {
         
         // Mostrar el textarea
         resultTextarea.classList.remove('hidden');
+        //boton copiar
+        mostrarBotonCopy();
+        
         //Limpiar Entrada de usuario
         limpiarEntradaUser()
     } else {
          // Mostrar el textarea
         resultTextarea.classList.remove('hidden');
         resultTextarea.value = "Ningún mensaje fue encontrado o el texto contiene caracteres inválidos";
+
+         // Ocultar el botón de copiar
+         ocultarBotonCopy();
     }
 });
 
@@ -41,8 +48,17 @@ document.querySelector('.decrypt').addEventListener('click', function() {
         
         // Mostrar el textarea
         resultTextarea.classList.remove('hidden');
+        //boton copiar
+        mostrarBotonCopy();
+        
+        //Limpiar Entrada de usuario
+        limpiarEntradaUser()
     } else {
+         // Mostrar el textarea
+        resultTextarea.classList.remove('hidden');
         resultTextarea.value = "Ningún mensaje fue encontrado o el texto contiene caracteres inválidos";
+        // Ocultar el botón de copiar
+        ocultarBotonCopy()
     }
 });
 
@@ -71,7 +87,7 @@ function resetResult() {
 
     resultTextarea.classList.add('hidden');
     resultTextarea.value = "";
-    
+    ocultarBotonCopy();
     if (image) {
         // Añadir la clase hidden-mobile si la pantalla es pequeña
         if (window.innerWidth <= 914) {
@@ -89,6 +105,14 @@ function limpiarEntradaUser() {
     userTextarea.value = "";
 }
 
+function ocultarBotonCopy() {
+    const copyButton = document.getElementById('button__copiar');
+    copyButton.classList.add('hidden');
+}
+function mostrarBotonCopy() {
+    const copyButton = document.getElementById('button__copiar');
+    copyButton.classList.remove('hidden');
+}
 
 
 // Función para copiar el contenido del textarea al portapapeles
@@ -104,4 +128,5 @@ document.getElementById('button__copiar').addEventListener('click', function() {
 // Restablecer el estado del div de resultado al escribir en el textarea de entrada
 document.getElementById('text_user').addEventListener('input', function() {
     resetResult();
+    ocultarBotonCopy();      
 });
