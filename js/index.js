@@ -15,6 +15,8 @@ document.getElementById('encryptButton').addEventListener('click', function() {
         
         // Mostrar el textarea
         resultTextarea.classList.remove('hidden');
+        //Limpiar Entrada de usuario
+        limpiarEntradaUser()
     } else {
          // Mostrar el textarea
         resultTextarea.classList.remove('hidden');
