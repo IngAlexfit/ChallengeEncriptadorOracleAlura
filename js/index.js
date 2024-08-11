@@ -62,15 +62,32 @@ function desencriptar(text) {
 
 // Función para ocultar el textarea y restablecer el estado inicial
 function resetResult() {
-    const resultTextarea = document.getElementById('result');
+    const resultTextarea = document.getElementById('result');    
     const image = document.getElementById('image_result');
+   
     const noteText = document.querySelector('.result-description');
 
     resultTextarea.classList.add('hidden');
     resultTextarea.value = "";
-    if (image) image.style.display = 'block';
+    
+    if (image) {
+        // Añadir la clase hidden-mobile si la pantalla es pequeña
+        if (window.innerWidth <= 914) {
+            image.classList.add('hidden-mobile');
+        } else {
+            image.style.display = 'block';
+        }
+    }
+    
     if (noteText) noteText.style.display = 'block';
 }
+
+function limpiarEntradaUser() {
+    const userTextarea = document.getElementById('text_user');
+    userTextarea.value = "";
+}
+
+
 
 // Función para copiar el contenido del textarea al portapapeles
 document.getElementById('button__copiar').addEventListener('click', function() {
@@ -78,6 +95,8 @@ document.getElementById('button__copiar').addEventListener('click', function() {
     resultTextarea.select();
     document.execCommand('copy');
     resetResult();
+    limpiarEntradaUser();
+    alert("Texto copiado al portapapeles");
 });
 
 // Restablecer el estado del div de resultado al escribir en el textarea de entrada
