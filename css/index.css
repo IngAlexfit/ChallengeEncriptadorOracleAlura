@@ -6,7 +6,7 @@ html {
   
   height: 100%;
   background-color: #F3F5FC;
-  overflow: hidden;
+  
 }
 
 body {
@@ -195,7 +195,7 @@ button.decrypt {
   }
 
   .result {
-    width: 100%;
+    width: 88%;
     height: 100%;
     padding: 10px 0px 24px 10px;
     margin-top: 0%;
