@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
     <link rel="stylesheet" href="css/index.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
@@ -15,19 +17,19 @@
         <textarea id="text_user" placeholder="Ingrese el texto aquí"></textarea>
         <div class="warning">
           <img src="assets/images/svg/simbolo.svg" alt="Warning">
-          <span>Solo letras minúsculas y sin acentos</span>
+          <span class="inter-regular">Solo letras minúsculas y sin acentos</span>
         </div>
         <div class="buttons">
-          <button class="encrypt" id="encryptButton">Encriptar</button>
-          <button class="decrypt">Desencriptar</button>
+          <button class="encrypt inter-regular" id="encryptButton">Encriptar</button>
+          <button class="decrypt inter-regular">Desencriptar</button>
         </div>
       </div>
       <div class="div2">
         <div class="result">
             <img src="assets/images/svg/muñecoLupa.svg" alt="Resultado" id="image_result" class="result-image">
-            <textarea  id="result" class="result-title hidden " placeholder="Ningún mensaje fue encontrado" readonly></textarea>
-            <div class="result-description">Ingresa el texto que desees encriptar o desencriptar.</div>
-            <button class="button__copiar bn_ocultar hidden" id="button__copiar">Copiar</button>
+            <textarea  id="result" class="result-title hiddeninter-regular " placeholder="Ningún mensaje fue encontrado" readonly></textarea>
+            <div class="result-description inter-regular">Ingresa el texto que desees encriptar o desencriptar.</div>
+            <button class="button__copiar bn_ocultar hidden inter-regular" id="button__copiar">Copiar</button>
         </div>
     </div>
     </div>     
