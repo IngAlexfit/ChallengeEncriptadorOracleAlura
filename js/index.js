@@ -5,7 +5,7 @@ document.getElementById('encryptButton').addEventListener('click', function() {
     const noteText = document.querySelector('.result-description'); 
     const copyButton = document.getElementById('button__copiar');
 
-    if (inputText.trim() !== "" && /^[a-z0-9\sáéíóúüñ?!¡¿.,]+$/i.test(inputText)) {
+    if (inputText.trim() !== "" && /^[a-z0-9\sñ?!¡¿.,]+$/i.test(inputText)) {
         // Encriptar el texto
         const encryptedText = encriptar(inputText);
         resultTextarea.value = encryptedText;
@@ -37,7 +37,7 @@ document.querySelector('.decrypt').addEventListener('click', function() {
     const image = document.getElementById('image_result');
     const noteText = document.querySelector('.result-description');
 
-    if (inputText.trim() !== "" && /^[a-z0-9\sáéíóúüñ?!¡¿.,]+$/i.test(inputText)) {
+    if (inputText.trim() !== "" && /^[a-z0-9\sñ?!¡¿.,]+$/i.test(inputText)) {
         // Desencriptar el texto
         const decryptedText = desencriptar(inputText);
         resultTextarea.value = decryptedText;
